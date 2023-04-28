@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H
+#define _MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -43,7 +43,7 @@ int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
-/* FUNCTIONS */
+/*LIST OF FUNCTIONS*/
 
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
@@ -74,11 +74,11 @@ char buffer[], int flags, char flag_ch, int width, int precision, int size);
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funcion to print memory address */
+/* Function to print memory address */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funciotns to handle other specifiers */
+/* Functions to handle other specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
@@ -88,11 +88,11 @@ int get_size(const char *format, int *i);
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/*Function to print a string in rot13*/
+/*Function to print a string in rot 13*/
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* width handler */
+/* Width handler */
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
 int write_number(int is_positive, int ind, char buffer[],
@@ -106,15 +106,12 @@ int write_unsgnd(int is_negative, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);
 
-/* UTILS */
+/*UTILS*/
 int is_printable(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
-/* PRINTS HEXADECIMAL NUMBERS*/
-int print_hexadecimal(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-#endif
 
+#endif
